@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SpawN</string>
+
+    <string name="defalt_answer">Sorry I could not understand what you just said.</string>
+</resources>

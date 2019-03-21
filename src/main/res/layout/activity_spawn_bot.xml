@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.spawn.ai.SpawnBotActivity">
+
+        </variable>
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".SpawnBotActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/mic_rl"
+            android:layout_marginTop="10dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/chat_recycler" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="bottom"
+            android:id="@+id/mic_rl"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:hint="Enter text"
+                android:maxEms="15"
+                android:visibility="gone"
+                android:maxLines="1"
+                android:paddingLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/edit_text_background" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                app:lottie_rawRes="@raw/loading"
+                android:id="@+id/mic"
+                android:visibility="gone"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/mic_image"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_mic"
+                android:background="@drawable/mic_round_back"
+                android:scaleType="fitCenter" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>
