@@ -77,6 +77,28 @@ public class JsonFileReader {
         return message;
     }
 
+    public String getDefaultAnswer() {
+        String message = "";
+        if (fileContents != null) {
+            try {
+                JSONObject data = new JSONObject(fileContents);
+                if (data.has("default")) {
+                    JSONObject body = data.getJSONObject("default");
+                    JSONArray jsonArray = body.getJSONArray("message");
+                    int index = new Random().nextInt(jsonArray.length());
+                    message = jsonArray.get(index).toString();
+                } else {
+                    message = "Sorry, I could not understand what you just said";
+                }
+                return message;
+            } catch (JSONException e) {
+                e.printStackTrace();
+                message = "Sorry, I could not understand what you just said";
+            }
+        }
+        return message;
+    }
+
     public String getFileContents() {
         return this.fileContents;
     }

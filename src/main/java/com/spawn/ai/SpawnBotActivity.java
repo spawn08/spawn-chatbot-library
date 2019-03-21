@@ -277,7 +277,7 @@ public class SpawnBotActivity extends AppCompatActivity implements RecognitionLi
                             botResponse.getEntities().getBotIntents().size() > 0)
                         chatMessageType1.setMessage(JsonFileReader.getInstance().getJsonFromKey(botResponse.getEntities().getBotIntents().get(0).getValue().toString(), ChatViewTypes.CHAT_VIEW_BOT));
                     else
-                        chatMessageType1.setMessage(getResources().getString(R.string.defalt_answer));
+                        chatMessageType1.setMessage(JsonFileReader.getInstance().getDefaultAnswer());
                     chatMessageType1.setDate(new DateTimeUtils().getDate());
                     chatMessageType1.setViewType(1);
                     chatMessageType1.setBotResponse(null);
